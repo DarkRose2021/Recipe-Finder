@@ -1,0 +1,138 @@
+@import './src/styles.scss';
+
+div{
+    text-align: center;
+    font-size: 1em;
+}
+
+.list, .oneResult, .result, .search{
+    background-color: $accent-blue;
+}
+
+.center{
+    @include flex-center;
+    background-color: none;
+}
+
+.list{
+    @include rounded-border;
+    margin: .5% auto;
+    padding: 1%;
+    cursor: pointer;
+}
+
+.list:hover{
+    background-color: $blue-hover;
+    color: $text-color-hover;
+}
+
+.list:active{
+    background-color: $blue-click;
+    color: $text-click;
+}
+
+.allResults, .filterResult{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.oneResult, .result{
+    cursor: pointer;
+    border: 3px solid $blue-click;
+    margin: 1% 2%;
+    padding: 1%;
+    @include rounded-border;
+}
+
+.oneResult{
+    max-width: 25%;
+    img{
+        max-width: 75%
+    }
+}
+
+.result{
+    max-width: 25%;
+    img{
+        max-width: 75%
+    }
+}
+
+.result:nth-child(even){
+    background-color: $accent-purple;
+}
+
+.result:hover, .oneResult:hover{
+    background-color: $blue-hover;
+    color: $text-color-hover;
+}
+
+.result:active, .oneResult:active{
+    background-color: $blue-click;
+    color: $text-click;
+}
+
+.result:nth-child(even):hover{
+    background-color: $purple-hover;
+}
+
+.result:nth-child(even):active{
+    background-color: $purple-click;
+}
+
+.container{
+    @include flex-center();
+    margin: .5% 20%;
+    max-width: fit-content;
+    .card{
+        @include rounded-border;
+        background-color: $accent-purple;
+        border: 3px solid $purple-click;
+        text-align: center;
+        padding: .5%;
+        .video{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        a{
+            text-decoration: underline;
+        }
+        .ins{
+            padding: .5%
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .allResults, .filterResult{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content: space-between;
+        margin: 1%;
+    }
+    .oneResult, .result{
+        margin: 1% auto;
+        max-width: 40%;
+        img{
+            max-width: 40%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .allResults, .filterResult{
+        display: block;
+        margin: 1%;
+    }
+    .oneResult, .result{
+        margin: 1% auto;
+        max-width: 90%;
+        img{
+            max-width: 90%;
+        }
+    }
+}

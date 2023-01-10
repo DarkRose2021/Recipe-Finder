@@ -1,0 +1,44 @@
+@import './src/styles.scss';
+
+div{
+    font-size: 1em;
+}
+
+.center{
+    margin: 1.5% 1%;
+    @include flex-center();
+}
+
+.button, .card{
+    background-color: $accent-purple;
+}
+
+.button{
+    max-width: fit-content;
+    padding: .7%;
+    cursor: pointer;
+    @include rounded-border();
+}
+
+.container{
+    @include flex-center();
+    margin: .5% 20%;
+    max-width: fit-content;
+    .card{
+        @include rounded-border;
+        border: 3px solid $purple-click;
+        text-align: center;
+        padding: .5%;
+        .video{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        a{
+            text-decoration: underline;
+        }
+        .ins{
+            padding: 1%
+        }
+    }
+}

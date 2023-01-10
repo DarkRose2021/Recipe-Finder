@@ -1,0 +1,87 @@
+@import './src/styles.scss';
+
+div{
+    text-align: center;
+    font-size: 1em;
+}
+
+.meal, .search, .card{
+    background-color: $accent-blue;
+}
+
+.meals{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.meal{
+    cursor: pointer;
+    max-width: 25%;
+    border: 3px solid $blue-click;
+    margin: 1% 2%;
+    padding: 1%;
+    @include rounded-border;
+    img{
+        max-width: 75%
+    }
+}
+
+.meal:hover{
+    background-color: $blue-hover;
+    color: $text-color-hover;
+}
+
+.meal:active{
+    background-color: $blue-click;
+    color: $text-click;
+}
+
+.meal:nth-child(even){
+    background-color: $accent-purple;
+}
+
+.meal:nth-child(even):hover{
+    background-color: $purple-hover;
+}
+
+.meal:nth-child(even):active{
+    background-color: $purple-click;
+}
+
+.container{
+    @include flex-center();
+    margin: .5% 20%;
+    max-width: fit-content;
+    .card{
+        @include rounded-border;
+        border: 3px solid $blue-click;
+        text-align: center;
+        padding: .5%;
+        .video{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        a{
+            text-decoration: underline;
+        }
+        .ins{
+            padding: .5%
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .meals{
+        margin: 1%;
+    }
+    .meal{
+        margin: 1% auto;
+        width: 90%;
+        img{
+            width: 90%;
+        }
+    }
+}

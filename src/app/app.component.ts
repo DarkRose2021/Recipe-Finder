@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Recipe } from 'src/recipe';
+import { ApiCallsService } from "./service/api-calls.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'meal-planner';
+constructor(private apiCallService: ApiCallsService){}
+  title = 'Recipe Finder';
 }

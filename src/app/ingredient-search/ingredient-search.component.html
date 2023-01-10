@@ -1,0 +1,48 @@
+<div class="search">
+    <input type="text" [(ngModel)]="mainSearched" (keyup.enter)="onMainSearch()">
+    <button (click)="onMainSearch()">Search</button>
+</div>
+
+<div *ngIf="wasError" class="error">
+    No recipe found with that main ingredient.
+</div>
+
+<div *ngIf="main && !hideMain" class="meals">
+    <div *ngFor="let meal of main" (click)="showRecipe(meal.name)" class="meal">
+        <h2>{{meal.name}}</h2>
+        <img src="{{meal.img}}" width="350px">
+    </div>
+</div>
+
+<div *ngIf="recipe && !hideRecipe" class="container">
+    <div class="card">
+        <h2>{{recipe.name}}</h2>
+        <b>Category:</b> {{recipe.cat}}<br><br>
+        <img src={{recipe.img}} width="300"><br>
+        <a href={{recipe.video}}>Video</a>
+
+        <h3>Ingredients:</h3>
+        <div *ngIf="recipe.i1">{{recipe.m1}} {{recipe.i1}}</div>
+        <div *ngIf="recipe.i2">{{recipe.m2}} {{recipe.i2}}</div>
+        <div *ngIf="recipe.i3">{{recipe.m3}} {{recipe.i3}}</div>
+        <div *ngIf="recipe.i4">{{recipe.m4}} {{recipe.i4}}</div>
+        <div *ngIf="recipe.i5">{{recipe.m5}} {{recipe.i5}}</div>
+        <div *ngIf="recipe.i6">{{recipe.m6}} {{recipe.i6}}</div>
+        <div *ngIf="recipe.i7">{{recipe.m7}} {{recipe.i7}}</div>
+        <div *ngIf="recipe.i8">{{recipe.m8}} {{recipe.i8}}</div>
+        <div *ngIf="recipe.i9">{{recipe.m9}} {{recipe.i9}}</div>
+        <div *ngIf="recipe.i10">{{recipe.m10}} {{recipe.i10}}</div>
+        <div *ngIf="recipe.i11">{{recipe.m11}} {{recipe.i11}}</div>
+        <div *ngIf="recipe.i12">{{recipe.m12}} {{recipe.i12}}</div>
+        <div *ngIf="recipe.i13">{{recipe.m13}} {{recipe.i13}}</div>
+        <div *ngIf="recipe.i14">{{recipe.m14}} {{recipe.i14}}</div>
+        <div *ngIf="recipe.i15">{{recipe.m15}} {{recipe.i15}}</div>
+        <div *ngIf="recipe.i16">{{recipe.m16}} {{recipe.i16}}</div>
+        <div *ngIf="recipe.i17">{{recipe.m17}} {{recipe.i17}}</div>
+        <div *ngIf="recipe.i18">{{recipe.m18}} {{recipe.i18}}</div>
+        <div *ngIf="recipe.i19">{{recipe.m19}} {{recipe.i19}}</div>
+        <div *ngIf="recipe.i20">{{recipe.m20}} {{recipe.i20}}</div>
+        <h3>Instructions:</h3>
+        <div class="ins">{{recipe.instructions}}</div>
+    </div>
+</div>

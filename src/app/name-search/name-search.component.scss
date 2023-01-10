@@ -1,0 +1,57 @@
+@import './src/styles.scss';
+
+div{
+    text-align: center;
+    font-size: 1em;
+}
+
+.search, .card{
+    background-color: $accent-purple;
+}
+
+.search{
+    input[type=text]{
+        background-color: $accent-bg;
+        font-family: $text-font;
+        color: $text-color;
+        border: 5px solid $bg-click;
+    }
+    button{
+        background-color: $accent-bg;
+        font-family: $text-font;
+        color: $text-color;
+        border: 5px solid $bg-click;
+    }
+
+    button:hover{
+        background-color: $bg-hover;
+        color: $text-color-hover;
+    }
+    button:active{
+        background-color: $bg-click;
+        color: $text-click
+    }
+}
+
+.container{
+    @include flex-center();
+    margin: .5% 20%;
+    max-width: fit-content;
+    .card{
+        @include rounded-border;
+        border: 3px solid $purple-click;
+        text-align: center;
+        padding: .5%;
+        .video{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        a{
+            text-decoration: underline;
+        }
+        .ins{
+            padding: .5%
+        }
+    }
+}

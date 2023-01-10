@@ -1,0 +1,30 @@
+@import './src/styles.scss';
+
+div{
+    font-size: 1em;
+}
+
+h1{
+    font-size: 3em;
+}
+
+.buttons{
+    @include flex-center();
+    background-color: none;
+}
+
+.button{
+    background-color: $accent-green;
+    max-width: fit-content;
+    padding: .5%;
+    @include rounded-border();
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: $green-hover;
+}
+
+.button:active{
+    background-color: $green-click;
+}
